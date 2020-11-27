@@ -9,7 +9,8 @@
 
 - The code runs through an array of notes defined in a separate file. Along with the notes, there is an array that has the timings for each note which adds a delay between each note.
 <img src="images/buzzer.jpg" width = 640>
-- [Here is the video.](https://photos.app.goo.gl/16EzsTCNFE9SGHW58)
+-  [Here is the video.](https://photos.app.goo.gl/16EzsTCNFE9SGHW58)
+
 3. The hardest part was understanding the musical terminology and what each part does. As well as how to make a decent sound.
 
 4. To use this in my lantern I think I will have to make my own timing system to allow the code to run outside of the for loop playing the song. If I leave it how it is now, I think it will put a pause on my motion sensor checking for motion.
