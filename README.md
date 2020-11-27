@@ -18,4 +18,5 @@
 - Below is the wiring diagram. The motion sensor gets power from the 5v and is connected to the ground. It outputs to pin 7. The buzzer is connected to ground and gets its power from pin 8.
 <img src="images/buzzer-motion-diagram.jpg" width = 640>
 <img src="images/buzzer-motion.jpg" width = 640>
-[Here is the video](https://photos.app.goo.gl/YLU1F3VGqVp5JhANA)
+
+[Here is the video.](https://photos.app.goo.gl/YLU1F3VGqVp5JhANA)
