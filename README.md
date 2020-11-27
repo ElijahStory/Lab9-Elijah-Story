@@ -9,7 +9,7 @@
 
 - The code runs through an array of notes defined in a separate file. Along with the notes, there is an array that has the timings for each note which adds a delay between each note.
 <img src="images/buzzer.jpg" width = 640>
--  [Here is the video.](https://photos.app.goo.gl/16EzsTCNFE9SGHW58)
+[Here is the video.](https://photos.app.goo.gl/16EzsTCNFE9SGHW58)
 
 3. The hardest part was understanding the musical terminology and what each part does. As well as how to make a decent sound.
 
