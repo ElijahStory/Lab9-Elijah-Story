@@ -1,20 +1,30 @@
+//Elijah Story
+//11-27-2020
+//NMD211 Lab9 
+
+//Everything below was taken from the tutorial page in the lab folder.
+//I did change the melody.
+
 /* Plays a melody - circuit: 8-ohm speaker on digital pin 8 */
 
 #include "pitches.h"
 
 // notes in the melody:
 int melody[] = {
-  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
-};
+  NOTE_E5, NOTE_G5, NOTE_C5, NOTE_B4, NOTE_D5, NOTE_D5, NOTE_F5, NOTE_E5, NOTE_E5, NOTE_B4};
 
 // note durations: 4 = quarter note, 8 = eighth note, etc.:
 int noteDurations[] = {
-  4, 8, 8, 4, 4, 4, 4, 4
-};
+  4, 4, 4, 4, 4, 4, 4, 4, 4, 4};
+
+int lengthInt = 10;
 
 void setup() {
+}
+
+void loop() {
   // iterate over the notes of the melody:
-  for (int thisNote = 0; thisNote < 8; thisNote++) {
+  for (int thisNote = 0; thisNote < lengthInt; thisNote++) {
 
     // to calculate the note duration, take one second
     // divided by the note type.
@@ -29,8 +39,4 @@ void setup() {
     // stop the tone playing:
     noTone(8);
   }
-}
-
-void loop() {
-  // no need to repeat the melody.
 }
