@@ -11,12 +11,10 @@
 #include "pitches.h"
 
 // notes in the melody:
-int melody[] = {
-  NOTE_E5, NOTE_G5, NOTE_C5, NOTE_B4, NOTE_D5, NOTE_D5, NOTE_F5, NOTE_E5, NOTE_E5, NOTE_B4};
+int melody[] = {NOTE_E5, NOTE_G5, NOTE_C5, NOTE_B4, NOTE_D5, NOTE_D5, NOTE_F5, NOTE_E5, NOTE_E5, NOTE_B4};
 
 // note durations: 4 = quarter note, 8 = eighth note, etc.:
-int noteDurations[] = {
-  4, 4, 4, 4, 4, 4, 4, 4, 4, 4};
+int noteDurations[] = {4, 4, 4, 4, 4, 4, 4, 4, 4, 4};
 
 int lengthInt = 10;     //length of the song
 int thisNote = 0;       //current index of the notes
