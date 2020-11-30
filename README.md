@@ -21,7 +21,7 @@
 <img src="images/buzzer-motion.jpg" width = 640>
 
 ## #4
-- This is my final lantern design. It has a button to turn it on/off. The lantern itself has a flickering LED as well as a passive buzzer under a paper mache dome. The light and buzzer are on if the button is on and the motion sensor does not detect any movement. [Here is the video of the final lantern.]()
+- This is my final lantern design. It has a button to turn it on/off. The lantern itself has a flickering LED as well as a passive buzzer under a paper mache dome. The light and buzzer are on if the button is on and the motion sensor does not detect any movement. [Here is the video of the final lantern.](https://photos.app.goo.gl/NTvhQVUK23H4SWFq7)
 <img src="images/lantren-final.jpg" width = 640>
 
 - Below is a diagram of the wiring. The motion sensor simply gets power from a 5v supply and is connected to ground. Its output is connected to pin 7. For the button, the power runs to the button and waits. Once the button is pressed, the power splits and goes to pin 4 and passes through a 10k resistor before grading to ground. The LED has the power that comes from pin 10, passes through a 330 resistor and out to ground. The buzzer is connected to ground and gets its power from pin 8.
