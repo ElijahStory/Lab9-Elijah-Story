@@ -1,17 +1,17 @@
 //Elijah Story
-//11-6-2020
+//11-30-2020
 //NMD211 Lab8
 
-//This is the current state of my lantern.
+//This is the final state of my lantern.
 //I have a button set up to manually turn the lantern on/off.
-//When the lantern is on, it has a flickering effect.
-//While it is on, the motion sensor detects somebody,
-//the light turns off for 3 seconds. After the time has passed,
-//it turns back on and flickers.
+//When the lantern is on, it has a flickering effect and plays a tune.
+//While it is on, if motion sensor detects somebody,
+//the light and tune turn off for 3 seconds. After the time has passed,
+//it turns back on and flickers and the tune continues.
 
 #include "pitches.h"
 
-int lanternLed = 11;            // pin for lantern LED
+int lanternLed = 10;            // pin for lantern LED
 int sensorInput = 7;            // input pin (for PIR sensor)
 int buttonInput = 4;            // input for button
 int noteOutput = 8;             //output for buzzer
@@ -26,9 +26,9 @@ double pastTime = 0;            // this will hold the last time that was collect
 int randDelay;                  //this is the delay between LED levels
 int lengthInt = 10;             //length of the song
 int thisNote = 0;               //current index of the notes
-double lastTime = 0;               //the last time a note was played
-int noteDuration;               //how long the notes last
-double playTime;
+double lastTime = 0;            //the last time a note was played
+int noteDuration = 0;           //how long the notes last
+double playTime;                //keeps track of when the note started to play
 
 int melody[] = {NOTE_E5, NOTE_G5, NOTE_C5, NOTE_B4, NOTE_D5, NOTE_D5, NOTE_F5, NOTE_E5, NOTE_E5, NOTE_B4};
 
@@ -46,7 +46,7 @@ void setup() {
 void loop() {
   int pauseBetweenNotes = noteDuration * 1.30;    //set the pause delay
 
-  Serial.println(state);              //prints the "on/off" sensor status
+  //Serial.println(state);              //prints the "on/off" sensor status
   button = digitalRead(buttonInput);  //gets button input
   if (button == HIGH) {               //if the button is pressed
     if (button != buttonLast) {       //if the button is opposite last status
@@ -71,27 +71,27 @@ void loop() {
         randDelay = random(50, 200);        //pick new delay time
         pastTime = curTime;                 //update the past time
       }
-
-      if(curTime - playTime >= noteDuration){
-        noTone(noteOutput);
-      }
       
-      //if no motion is detected and enough time has passed
-      if (curTime - lastTime >= pauseBetweenNotes) {
+      //if no motion is detected and enough time has passed  
+      Serial.println(curTime - lastTime);
+      if(curTime - lastTime >= pauseBetweenNotes){        //if its time to play a new note
         noteDuration = 1000 / noteDurations[thisNote];    //update the duration
-        tone(noteOutput, melody[thisNote]);          //play the note
+        tone(noteOutput, melody[thisNote]);               //play the note
         if (thisNote == lengthInt - 1) {                  //if the index is the same size as the length of song
           thisNote = 0;                                   //reset index
         } else {
           thisNote++;                                     //increment note index
         }
-        lastTime = curTime;
-        playTime = curTime;                               //update last played
+        lastTime = curTime;                               //update last time a note was played
+        playTime = curTime;                               //update when the note started
+      }else if(curTime - playTime >= noteDuration){       //turns the note off based on how long it should last
+        noTone(noteOutput);
       }
+
     }
 
   } else {//PIR sees something
     digitalWrite(lanternLed, 0);  // turn lantern LED OFF
-    noTone(noteOutput);
+    noTone(noteOutput);           //stop tune
   }
 }
