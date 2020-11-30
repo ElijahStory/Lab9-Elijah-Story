@@ -26,4 +26,4 @@
 
 - Below is a diagram of the wiring. The motion sensor simply gets power from a 5v supply and is connected to ground. Its output is connected to pin 7. For the button, the power runs to the button and waits. Once the button is pressed, the power splits and goes to pin 4 and passes through a 10k resistor before grading to ground. The LED has the power that comes from pin 10, passes through a 330 resistor and out to ground. The buzzer is connected to ground and gets its power from pin 8.
 <img src="images/final-diagram.jpg" width = 640>
-<img src="images/final-pic.jpg" width = 640>
+<img src="images/final-pic.jpg" width = 1040>
